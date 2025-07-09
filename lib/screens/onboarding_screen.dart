@@ -80,8 +80,7 @@ class OnBoardingScreen extends StatelessWidget {
                       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel felis accumsan, cursus neque condimentum, cursus ante.',
                       style: TextStyle(fontSize: 16, color: Colors.grey),
                     ),
-                    const Spacer(), // يدفع العناصر التالية إلى الأسفل
-                    // الصف الذي يحتوي على نص "Swipe to explore now" والزر
+                    const Spacer(),
                     Container(
                       width: double.infinity,
                       height: 50,
@@ -91,10 +90,10 @@ class OnBoardingScreen extends StatelessWidget {
                         color: const Color.fromARGB(255, 154, 240, 199),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 15),
+                        padding: const EdgeInsets.only(left: 20),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment
-                              .spaceBetween, // توزيع المساحة بين العناصر
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             const Text(
                               'Swipe to explore now',
@@ -104,16 +103,23 @@ class OnBoardingScreen extends StatelessWidget {
                                 color: Colors.black,
                               ),
                             ),
-                            // الزر الدائري الأخضر
                             GestureDetector(
                               onTap: () => Navigator.push(
-                                
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => HomeScreen(),
+                                ),
                               ),
                               child: Container(
                                 width: 50,
                                 height: 50,
                                 decoration: BoxDecoration(
-                                  color: const Color.fromARGB(255, 16, 213, 118),
+                                  color: const Color.fromARGB(
+                                    255,
+                                    16,
+                                    213,
+                                    118,
+                                  ),
                                   borderRadius: BorderRadius.only(
                                     bottomRight: Radius.circular(20),
                                     topRight: Radius.circular(20),
@@ -130,6 +136,7 @@ class OnBoardingScreen extends StatelessWidget {
                         ),
                       ),
                     ),
+                    const Spacer(),
                   ],
                 ),
               ),

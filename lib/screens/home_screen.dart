@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:furniture_app_ui/Models/data_model.dart';
-import 'package:furniture_app_ui/Widgets/custom_searchbar.dart';
-import 'package:furniture_app_ui/Widgets/product_card.dart';
-import 'package:furniture_app_ui/screens/details_screen.dart';
+import 'package:furniture_app_ui/widgets/custom_searchbar.dart';
+import 'package:furniture_app_ui/components/grid_product.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,7 +14,6 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // العنوان والترحيب
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -69,38 +66,7 @@ class HomeScreen extends StatelessWidget {
               SizedBox(height: 20),
 
               Expanded(
-                child: SingleChildScrollView(
-                  child: GridView.builder(
-                    shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 20,
-                      childAspectRatio: 0.60,
-                    ),
-                    itemCount: dataModel.length,
-                    itemBuilder: (context, index) {
-                      final item = dataModel[index];
-                      return GestureDetector(
-                        onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => DetailsScreen(),
-                          ),
-                        ),
-                        child: productCard(
-                          context,
-                          item.productCode,
-                          item.title,
-                          item.price.toStringAsFixed(2),
-                          item.color,
-                          item.image,
-                        ),
-                      );
-                    },
-                  ),
-                ),
+                child: GridProduct(),
               ),
             ],
           ),

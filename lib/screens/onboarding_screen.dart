@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:furniture_app_ui/Widgets/background_shape.dart';
+import 'package:furniture_app_ui/widgets/background_shape.dart';
 import 'package:furniture_app_ui/constants/colors.dart';
 import 'package:furniture_app_ui/screens/home_screen.dart';
 

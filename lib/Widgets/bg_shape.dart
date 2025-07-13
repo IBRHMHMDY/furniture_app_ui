@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class BackgroundShape extends CustomClipper<Path> {
+class BgShape extends CustomClipper<Path> {
   final double borderRadius;
   final double topCurveOffset;
 
-  BackgroundShape({this.borderRadius = 30.0, this.topCurveOffset = 25.0});
+  BgShape({this.borderRadius = 30.0, this.topCurveOffset = 25.0});
 
   @override
   Path getClip(Size size) {
@@ -48,7 +48,7 @@ class BackgroundShape extends CustomClipper<Path> {
 
   @override
   bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
-    if (oldClipper is BackgroundShape) {
+    if (oldClipper is BgShape) {
       return oldClipper.borderRadius != borderRadius ||
           oldClipper.topCurveOffset != topCurveOffset;
     }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:furniture_app_ui/widgets/background_shape.dart';
+import 'package:furniture_app_ui/widgets/bg_shape.dart';
 import 'package:furniture_app_ui/constants/colors.dart';
 import 'package:furniture_app_ui/screens/home_screen.dart';
 
@@ -50,7 +50,7 @@ class OnBoardingScreen extends StatelessWidget {
             height: whiteCardHeight,
 
             child: ClipPath(
-              clipper: BackgroundShape(),
+              clipper: BgShape(),
               child: Container(
                 decoration: const BoxDecoration(
                   color: Colors.white,

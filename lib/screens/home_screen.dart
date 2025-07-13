@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:furniture_app_ui/constants/colors.dart';
 import 'package:furniture_app_ui/widgets/custom_searchbar.dart';
 import 'package:furniture_app_ui/components/grid_product.dart';
 
@@ -65,12 +67,30 @@ class HomeScreen extends StatelessWidget {
 
               SizedBox(height: 20),
 
-              Expanded(
-                child: GridProduct(),
-              ),
+              Expanded(child: GridProduct()),
             ],
           ),
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.home, color: AppColors.bgDarkGreen),
+            label: "",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.square_grid_2x2, color: Colors.grey),
+            label: "",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.heart, color: Colors.grey),
+            label: "",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.shopping_cart, color: Colors.grey),
+            label: "",
+          ),
+        ],
       ),
     );
   }

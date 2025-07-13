@@ -24,11 +24,13 @@ class GridProduct extends StatelessWidget {
           return GestureDetector(
             onTap: () => Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => DetailsScreen(product: item,)),
+              MaterialPageRoute(
+                builder: (context) => DetailsScreen(product: item),
+              ),
             ),
             child: productCard(
               context,
-              item.productCode,
+              item.quantity,
               item.title,
               item.price.toStringAsFixed(2),
               item.color,

@@ -13,10 +13,11 @@ class DetailsScreen extends StatefulWidget {
 }
 
 class _DetailsScreenState extends State<DetailsScreen> {
+  int count = 1;
+
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
-
     return Scaffold(
       body: Stack(
         children: [
@@ -50,7 +51,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
               clipper: BgShapeFlipped(),
               child: Container(
                 decoration: const BoxDecoration(
-                  color: primaryDarkGreen,
+                  color: AppColors.bgDarkGreen,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(30),
                     topRight: Radius.circular(30),
@@ -66,7 +67,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                       style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white70,
+                        color: Colors.white,
                       ),
                     ),
                     const SizedBox(height: 15),
@@ -93,13 +94,19 @@ class _DetailsScreenState extends State<DetailsScreen> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         //  Minus Button
-                        GestureDetector(
+                        InkWell(
+                          onTap: () {
+                            setState(() {
+                              count > 1 ? count-- : 1;
+                            });
+                          },
+                          borderRadius: BorderRadius.circular(12),
                           child: Container(
                             width: 60,
                             height: 60,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(12),
-                              color: const Color.fromARGB(166, 49, 241, 58),
+                              color: AppColors.priceGreen,
                             ),
                             child: Icon(
                               CupertinoIcons.minus,
@@ -114,7 +121,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                           width: 40,
                           child: Center(
                             child: Text(
-                              "1",
+                              count.toString(),
                               style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
@@ -124,13 +131,19 @@ class _DetailsScreenState extends State<DetailsScreen> {
                           ),
                         ),
                         // Plus Button
-                        GestureDetector(
+                        InkWell(
+                          onTap: () {
+                            setState(() {
+                              count >= 1 ? count++ : 1;
+                            });
+                          },
+                          borderRadius: BorderRadius.circular(12),
                           child: Container(
                             width: 60,
                             height: 60,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(12),
-                              color: const Color.fromARGB(255, 16, 213, 118),
+                              color: AppColors.priceGreen,
                             ),
                             child: Icon(
                               CupertinoIcons.plus,
@@ -154,6 +167,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.w900,
+                                  fontSize: 16,
                                 ),
                               ),
                             ),

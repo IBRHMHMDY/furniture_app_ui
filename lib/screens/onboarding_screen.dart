@@ -25,7 +25,7 @@ class OnBoardingScreen extends StatelessWidget {
             left: 0,
             right: 0,
             height: greenSectionHeight,
-            child: Container(color: primaryDarkGreen),
+            child: Container(color: AppColors.bgDarkGreen),
           ),
 
           // 2. صورة الكرسي (توضع فوق الخلفية الخضراء وتتداخل قليلاً)
@@ -71,23 +71,26 @@ class OnBoardingScreen extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                        color: AppColors.titleTextColor,
                       ),
                     ),
                     const SizedBox(height: 15), // مسافة فارغة
                     // النص الوصفي
                     const Text(
                       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel felis accumsan, cursus neque condimentum, cursus ante.',
-                      style: TextStyle(fontSize: 16, color: Colors.grey),
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: AppColors.subtitleTextColor,
+                      ),
                     ),
                     const Spacer(),
                     Container(
                       width: double.infinity,
-                      height: 50,
+                      height: 60,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(12),
                         shape: BoxShape.rectangle,
-                        color: const Color.fromARGB(255, 154, 240, 199),
+                        color: AppColors.bgLight,
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(left: 20),
@@ -111,22 +114,14 @@ class OnBoardingScreen extends StatelessWidget {
                                 ),
                               ),
                               child: Container(
-                                width: 50,
-                                height: 50,
+                                width: 60,
+                                height: 60,
                                 decoration: BoxDecoration(
-                                  color: const Color.fromARGB(
-                                    255,
-                                    16,
-                                    213,
-                                    118,
-                                  ),
-                                  borderRadius: BorderRadius.only(
-                                    bottomRight: Radius.circular(20),
-                                    topRight: Radius.circular(20),
-                                  ),
+                                  color: AppColors.arrowButtonGreen,
+                                  borderRadius: BorderRadius.circular(12),
                                 ),
                                 child: const Icon(
-                                  Icons.arrow_forward_ios, // أيقونة السهم
+                                  Icons.arrow_forward, // أيقونة السهم
                                   color: Colors.white,
                                   size: 24,
                                 ),
